@@ -1,0 +1,60 @@
+﻿@using WebApplication1;
+@{
+    //access database
+    var data = new List<student>();
+
+    data.Add(new student() { name = "David", tel = "0941241231", address = "taipei" });
+    data.Add(new student() { name = "Eric", tel = "0941241231", address = "taipei" });
+    data.Add(new student() { name = "Bob", tel = "0941241231", address = "taipei" });
+    data.Add(new student() { name = "Jack", tel = "0941241231", address = "taipei" });
+    data.Add(new student() { name = "Tom", tel = "0941241231", address = "taipei" });
+    data.Add(new student() { name = "Dan", tel = "0941241231", address = "taipei" });
+    data.Add(new student() { name = "Amy", tel = "0941241231", address = "taipei" });
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-6">
+            test
+        </div>
+        <div class="col-lg-6">
+
+
+
+
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">Panel with panel-primary class</div>
+                <div class="panel-body">
+                    <div class="row">
+                        @*test product*@
+                        @foreach (var item in data)
+                        {
+                            <div class="col-md-4">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">@item.name</div>
+                                    <div class="panel-body">
+                                        <label>電話:@item.tel </label>
+                                        <label>地址:@item.address</label>
+                                        <br />
+                                        <button class="btn btn-primary btn-sm">修改 @item.name</button>
+                                        <button class="btn btn-danger btn-sm">刪除 @item.name</button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
